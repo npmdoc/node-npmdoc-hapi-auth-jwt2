@@ -1,9 +1,14 @@
-# api documentation for  [hapi-auth-jwt2 (v7.2.4)](https://github.com/dwyl/hapi-auth-jwt2)  [![npm package](https://img.shields.io/npm/v/npmdoc-hapi-auth-jwt2.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-hapi-auth-jwt2) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-hapi-auth-jwt2.svg)](https://travis-ci.org/npmdoc/node-npmdoc-hapi-auth-jwt2)
+# npmdoc-hapi-auth-jwt2
+
+#### api documentation for  [hapi-auth-jwt2 (v7.2.4)](https://github.com/dwyl/hapi-auth-jwt2)  [![npm package](https://img.shields.io/npm/v/npmdoc-hapi-auth-jwt2.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-hapi-auth-jwt2) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-hapi-auth-jwt2.svg)](https://travis-ci.org/npmdoc/node-npmdoc-hapi-auth-jwt2)
+
 #### Hapi.js Authentication Plugin/Scheme using JSON Web Tokens (JWT)
 
-[![NPM](https://nodei.co/npm/hapi-auth-jwt2.png?downloads=true)](https://www.npmjs.com/package/hapi-auth-jwt2)
+[![NPM](https://nodei.co/npm/hapi-auth-jwt2.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/hapi-auth-jwt2)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-hapi-auth-jwt2/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-hapi-auth-jwt2_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-hapi-auth-jwt2/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-hapi-auth-jwt2/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-hapi-auth-jwt2/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-hapi-auth-jwt2/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-hapi-auth-jwt2/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-hapi-auth-jwt2/build/screenCapture.npmPackageListing.svg)
 
@@ -18,7 +23,6 @@
 {
     "author": {
         "name": "@nelsonic",
-        "email": "contact.nelsonic@gmail.com",
         "url": "https://github.com/nelsonic"
     },
     "bugs": {
@@ -26,24 +30,19 @@
     },
     "contributors": [
         {
-            "name": "Kevin Wu",
-            "email": "@eventhough <kevindwusf@gmail.com"
+            "name": "Kevin Wu"
         },
         {
-            "name": "Alan Shaw",
-            "email": "@alanshaw <alan@tableflip.io"
+            "name": "Alan Shaw"
         },
         {
-            "name": "Benjamin Lees",
-            "email": "@benjaminlees <benji.man.lees@gmail.com"
+            "name": "Benjamin Lees"
         },
         {
-            "name": "Jason Nah",
-            "email": "@jyn <jason.@gmail.com"
+            "name": "Jason Nah"
         },
         {
-            "name": "Steven Gangstead",
-            "email": "@gangstead <steven@gangstead.com"
+            "name": "Steven Gangstead"
         }
     ],
     "dependencies": {
@@ -83,8 +82,7 @@
     "main": "lib/index.js",
     "maintainers": [
         {
-            "name": "nelsonic",
-            "email": "contact.nelsonic@gmail.com"
+            "name": "nelsonic"
         }
     ],
     "name": "hapi-auth-jwt2",
@@ -93,7 +91,6 @@
         "coverage",
         "jshint"
     ],
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/dwyl/hapi-auth-jwt2.git"
@@ -109,134 +106,6 @@
     },
     "version": "7.2.4"
 }
-```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module hapi-auth-jwt2](#apidoc.module.hapi-auth-jwt2)
-1.  [function <span class="apidocSignatureSpan">hapi-auth-jwt2.</span>extract (request, options)](#apidoc.element.hapi-auth-jwt2.extract)
-1.  [function <span class="apidocSignatureSpan">hapi-auth-jwt2.</span>register (server, options, next)](#apidoc.element.hapi-auth-jwt2.register)
-
-#### [module hapi-auth-jwt2.extract](#apidoc.module.hapi-auth-jwt2.extract)
-1.  [function <span class="apidocSignatureSpan">hapi-auth-jwt2.</span>extract (request, options)](#apidoc.element.hapi-auth-jwt2.extract.extract)
-1.  [function <span class="apidocSignatureSpan">hapi-auth-jwt2.extract.</span>isValid (token)](#apidoc.element.hapi-auth-jwt2.extract.isValid)
-
-
-
-# <a name="apidoc.module.hapi-auth-jwt2"></a>[module hapi-auth-jwt2](#apidoc.module.hapi-auth-jwt2)
-
-#### <a name="apidoc.element.hapi-auth-jwt2.extract"></a>[function <span class="apidocSignatureSpan">hapi-auth-jwt2.</span>extract (request, options)](#apidoc.element.hapi-auth-jwt2.extract)
-- description and source-code
-```javascript
-function extract(request, options) {
-  // The key holding token value in url or cookie defaults to token
-  var auth, token;
-  var cookieKey = customOrDefaultKey(options, 'cookieKey', 'token');
-  var headerKey = customOrDefaultKey(options, 'headerKey', 'authorization');
-  var urlKey = customOrDefaultKey(options, 'urlKey', 'token');
-  var pattern = new RegExp(options.tokenType + '\\s+([^$]+)', 'i');
-
-  if (urlKey && request.query[urlKey]) { // tokens via url: https://github.com/dwyl/hapi-auth-jwt2/issues/19
-    auth = request.query[urlKey];
-  } else if (headerKey && request.headers[headerKey]) {
-    if (typeof options.tokenType === 'string') {
-      token = request.headers[headerKey].match(pattern);
-      auth = token === null ? null : token[1];
-    } else {
-      auth = request.headers[headerKey];
-    } // JWT tokens in cookie: https://github.com/dwyl/hapi-auth-jwt2/issues/55
-  } else if (cookieKey && request.headers.cookie) {
-    auth = Cookie.parse(request.headers.cookie)[cookieKey];
-  }
-
-  // strip pointless "Bearer " label & any whitespace > http://git.io/xP4F
-  return auth ? auth.replace(/Bearer/gi, '').replace(/ /g, '') : null;
-}
-```
-- example usage
-```shell
-n/a
-```
-
-#### <a name="apidoc.element.hapi-auth-jwt2.register"></a>[function <span class="apidocSignatureSpan">hapi-auth-jwt2.</span>register (server, options, next)](#apidoc.element.hapi-auth-jwt2.register)
-- description and source-code
-```javascript
-register = function (server, options, next) {
-  server.auth.scheme('jwt', internals.implementation); // hapijs.com/api#serverauthapi
-
-  return next();
-}
-```
-- example usage
-```shell
-...
-  return callback(null, true);
-}
-};
-
-var server = new Hapi.Server();
-server.connection({ port: 8000 });
-    // include our module here ↓↓
-server.register(require('hapi-auth-jwt2'), function (err) {
-
-if(err){
-  console.log(err);
-}
-
-server.auth.strategy('jwt', 'jwt',
-{ key: 'NeverShareYourSecret',          // Never Share your secret key
-...
-```
-
-
-
-# <a name="apidoc.module.hapi-auth-jwt2.extract"></a>[module hapi-auth-jwt2.extract](#apidoc.module.hapi-auth-jwt2.extract)
-
-#### <a name="apidoc.element.hapi-auth-jwt2.extract.extract"></a>[function <span class="apidocSignatureSpan">hapi-auth-jwt2.</span>extract (request, options)](#apidoc.element.hapi-auth-jwt2.extract.extract)
-- description and source-code
-```javascript
-function extract(request, options) {
-  // The key holding token value in url or cookie defaults to token
-  var auth, token;
-  var cookieKey = customOrDefaultKey(options, 'cookieKey', 'token');
-  var headerKey = customOrDefaultKey(options, 'headerKey', 'authorization');
-  var urlKey = customOrDefaultKey(options, 'urlKey', 'token');
-  var pattern = new RegExp(options.tokenType + '\\s+([^$]+)', 'i');
-
-  if (urlKey && request.query[urlKey]) { // tokens via url: https://github.com/dwyl/hapi-auth-jwt2/issues/19
-    auth = request.query[urlKey];
-  } else if (headerKey && request.headers[headerKey]) {
-    if (typeof options.tokenType === 'string') {
-      token = request.headers[headerKey].match(pattern);
-      auth = token === null ? null : token[1];
-    } else {
-      auth = request.headers[headerKey];
-    } // JWT tokens in cookie: https://github.com/dwyl/hapi-auth-jwt2/issues/55
-  } else if (cookieKey && request.headers.cookie) {
-    auth = Cookie.parse(request.headers.cookie)[cookieKey];
-  }
-
-  // strip pointless "Bearer " label & any whitespace > http://git.io/xP4F
-  return auth ? auth.replace(/Bearer/gi, '').replace(/ /g, '') : null;
-}
-```
-- example usage
-```shell
-n/a
-```
-
-#### <a name="apidoc.element.hapi-auth-jwt2.extract.isValid"></a>[function <span class="apidocSignatureSpan">hapi-auth-jwt2.extract.</span>isValid (token)](#apidoc.element.hapi-auth-jwt2.extract.isValid)
-- description and source-code
-```javascript
-function isValid(token) {
-  return token.split('.').length === 3;
-}
-```
-- example usage
-```shell
-n/a
 ```
 
 
