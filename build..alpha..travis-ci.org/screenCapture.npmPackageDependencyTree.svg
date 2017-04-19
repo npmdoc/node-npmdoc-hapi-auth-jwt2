@@ -1,25 +1,28 @@
-<svg height="350" width="720" xmlns="http://www.w3.org/2000/svg">
-<rect height="350" fill="#555" width="720"></rect>
+<svg height="398" width="720" xmlns="http://www.w3.org/2000/svg">
+<rect height="398" fill="#555" width="720"></rect>
 <text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
-<tspan x="10" y="26">└─┬ hapi-auth-jwt2@7.2.4 </tspan>
-<tspan x="10" y="42">  ├─┬ boom@4.3.1 </tspan>
-<tspan x="10" y="58">  │ └── hoek@4.1.1 </tspan>
-<tspan x="10" y="74">  ├── cookie@0.3.1 </tspan>
-<tspan x="10" y="90">  └─┬ jsonwebtoken@7.3.0 </tspan>
-<tspan x="10" y="106">    ├─┬ joi@6.10.1 </tspan>
-<tspan x="10" y="122">    │ ├── hoek@2.16.3 </tspan>
-<tspan x="10" y="138">    │ ├── isemail@1.2.0 </tspan>
-<tspan x="10" y="154">    │ ├── moment@2.18.1 </tspan>
-<tspan x="10" y="170">    │ └─┬ topo@1.1.0 </tspan>
-<tspan x="10" y="186">    │   └── hoek@2.16.3 </tspan>
-<tspan x="10" y="202">    ├─┬ jws@3.1.4 </tspan>
-<tspan x="10" y="218">    │ ├── base64url@2.0.0 </tspan>
-<tspan x="10" y="234">    │ ├─┬ jwa@1.1.5 </tspan>
-<tspan x="10" y="250">    │ │ ├── buffer-equal-constant-time@1.0.1 </tspan>
-<tspan x="10" y="266">    │ │ └── ecdsa-sig-formatter@1.0.9 </tspan>
-<tspan x="10" y="282">    │ └── safe-buffer@5.0.1 </tspan>
-<tspan x="10" y="298">    ├── lodash.once@4.1.1 </tspan>
-<tspan x="10" y="314">    ├── ms@0.7.3 </tspan>
-<tspan x="10" y="330">    └── xtend@4.0.1</tspan>
+<tspan x="10" y="26">6 megabytes installed</tspan>
+<tspan x="10" y="42"></tspan>
+<tspan x="10" y="58">node_modules</tspan>
+<tspan x="10" y="74">└─┬ hapi-auth-jwt2@7.2.4 </tspan>
+<tspan x="10" y="90">  ├─┬ boom@4.3.1 </tspan>
+<tspan x="10" y="106">  │ └── hoek@4.1.1 </tspan>
+<tspan x="10" y="122">  ├── cookie@0.3.1 </tspan>
+<tspan x="10" y="138">  └─┬ jsonwebtoken@7.3.0 </tspan>
+<tspan x="10" y="154">    ├─┬ joi@6.10.1 </tspan>
+<tspan x="10" y="170">    │ ├── hoek@2.16.3 </tspan>
+<tspan x="10" y="186">    │ ├── isemail@1.2.0 </tspan>
+<tspan x="10" y="202">    │ ├── moment@2.18.1 </tspan>
+<tspan x="10" y="218">    │ └─┬ topo@1.1.0 </tspan>
+<tspan x="10" y="234">    │   └── hoek@2.16.3 </tspan>
+<tspan x="10" y="250">    ├─┬ jws@3.1.4 </tspan>
+<tspan x="10" y="266">    │ ├── base64url@2.0.0 </tspan>
+<tspan x="10" y="282">    │ ├─┬ jwa@1.1.5 </tspan>
+<tspan x="10" y="298">    │ │ ├── buffer-equal-constant-time@1.0.1 </tspan>
+<tspan x="10" y="314">    │ │ └── ecdsa-sig-formatter@1.0.9 </tspan>
+<tspan x="10" y="330">    │ └── safe-buffer@5.0.1 </tspan>
+<tspan x="10" y="346">    ├── lodash.once@4.1.1 </tspan>
+<tspan x="10" y="362">    ├── ms@0.7.3 </tspan>
+<tspan x="10" y="378">    └── xtend@4.0.1</tspan>
 </text>
 </svg>
